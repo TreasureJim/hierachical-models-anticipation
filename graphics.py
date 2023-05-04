@@ -1,8 +1,7 @@
 import arcade
-from crate import Crate
-import simulation
 import timeit
 import globals
+import state_manager
 
 
 class GuiScreen(arcade.Window):
@@ -55,14 +54,14 @@ class GuiScreen(arcade.Window):
         # This is a VERY slow way of drawing these
         # TODO: change this to only add and pop crates WHEN they are picked up or spawned again
         self.crate_list.clear()
-        for crate in filter(lambda c: c.activated, list(globals.CRATES.values())):
+        for crate in state_manager.get_active_crates():
             self.crate_list.append(crate)
 
         self.zone_list.draw()
         self.crate_list.draw()
-        globals.ROBOTS.draw()
+        state_manager.ROBOTS.draw()
 
-        for robot in globals.ROBOTS:
+        for robot in state_manager.ROBOTS:
             if robot.crate.activated:
                 draw_x(robot.crate.grid_position)
 
@@ -91,9 +90,7 @@ def draw_x(position):
             position[1] * globals.GRID_RATIO_Y - globals.GRID_RATIO_Y * 0.4,
         ),
     )
-    print(position)
-    print(point_list)
-    arcade.draw_lines(point_list, arcade.color.GREEN, 3)
+    arcade.draw_lines(point_list, arcade.color.RED_DEVIL, 4)
 
 
 def start():

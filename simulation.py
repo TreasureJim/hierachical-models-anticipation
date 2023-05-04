@@ -2,6 +2,7 @@ import random
 import crate
 import globals
 import robot
+import state_manager
 
 
 def setup():
@@ -20,7 +21,7 @@ def setup():
                 continue
 
             activated = bool(random.getrandbits(1))
-            globals.CRATES[(x, y)] = crate.Crate((x, y), activated)
+            state_manager.CRATES[(x, y)] = crate.Crate((x, y), activated)
 
     # Randomly spawn in robots
     # TODO: Handle if they spawn on top of each other
@@ -29,4 +30,4 @@ def setup():
             random.randrange(1, globals.MAXIMUM_GRID_X / 3) * 3,
             random.randrange(1, globals.MAXIMUM_GRID_X / 3) * 3,
         )
-        globals.ROBOTS.append(robot.Robot(position))
+        state_manager.ROBOTS.append(robot.Robot(position))
