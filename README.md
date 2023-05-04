@@ -19,11 +19,5 @@ A simulation of forklifts creating paths to their respective containers by antic
 
 # TODO
 
-- manage objects
-	- positions
-	- forklifts 
-	- crates
-- draw objects 
-- simulate steps with simpy 
 - implement algorithm for pathfinding 
-- implement with simpy
+- simulate steps with simpy 
