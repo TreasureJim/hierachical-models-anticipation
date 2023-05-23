@@ -3,6 +3,9 @@ import crate
 import globals
 import robot
 import state_manager
+import simpy
+
+ENVIRONMENT = simpy.Environment()
 
 
 def setup():
@@ -30,4 +33,4 @@ def setup():
             random.randrange(1, globals.MAXIMUM_GRID_X / 3) * 3,
             random.randrange(1, globals.MAXIMUM_GRID_X / 3) * 3,
         )
-        state_manager.ROBOTS.append(robot.Robot(position))
+        state_manager.ROBOTS.append(robot.Robot(ENVIRONMENT, position))

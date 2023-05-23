@@ -1,6 +1,8 @@
 """
 Implementation of A-Star algorithm
 
+NOTE: Will not use A-Star algorithm and will use an algorithm made specifically for the set positioning of the crates which will be faster
+
 NOTES:
 Each step picks a node with the lowest f value
 f = g + h

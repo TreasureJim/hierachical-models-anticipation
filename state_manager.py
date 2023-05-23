@@ -1,8 +1,11 @@
 import random
 import arcade
+import simpy
 
 CRATES: dict[(int, int), any] = {}
 ROBOTS = arcade.SpriteList()
+
+ROBOT_SPEED = 1
 
 
 def get_active_crates():

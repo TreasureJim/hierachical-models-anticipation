@@ -46,13 +46,19 @@ class GuiScreen(arcade.Window):
                     )
                 )
 
+    def update(self, delta_time: float):
+        for robot in state_manager.ROBOTS:
+            robot.update()
+
+        return super().update(delta_time)
+
     def on_draw(self):
         self.clear()
         draw_start_time = timeit.default_timer()
 
         # filter only active crates
         # This is a VERY slow way of drawing these
-        # TODO: change this to only add and pop crates WHEN they are picked up or spawned again
+        # TODO: change this to only add and pop crates WHEN they are picked up or spawned again (managed with a dictionary)
         self.crate_list.clear()
         for crate in state_manager.get_active_crates():
             self.crate_list.append(crate)
