@@ -6,7 +6,9 @@ Initially I misunderstood the point of the library and tried creating a more com
 
 ![image](https://github.com/TreasureJim/hierachical-models-anticipation/assets/71513440/7899b3eb-c226-47fe-b43e-87013fb5e342)
 
-Running the `main.py` folder will print out a simulation of the below description using the simpy library
+# How to run
+
+Running the `main.py` file will print out a simulation of the below description using the simpy library.
 
 # Simulation
 
