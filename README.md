@@ -1,23 +1,11 @@
 # What is this 
 
-A simulation of forklifts creating paths to their respective containers by anticipating each others movements in the A-Star algorithm. 
+This is created to investigate the `simpy` library for hierarichical anticipatory models. 
 
-# Main Loop 
+Initially I misunderstood the point of the library and tried creating a more complex project with graphics however I now see this isn't the point of the library. All graphics work can be found in the `graphics-test` folder.
 
-## Start 
-1. Forklifts start in their starting points
-2. Containers are spawned randomly in a grid
+Running the `main.py` folder will print out a simulation of the below description using the simpy library
 
-## Loop
+# Simulation
 
-1. Each forklift is assigned a random crate to fetch and place in their drop-off zones 
-2. An initial path is created using pathfinding to the crate
-3. Each path is checked to see if it will coincide with any of the other forklift's paths
-	a) if it does then the forklift changes the path to wait until the path is clear of other forklift's
-4. Repeat for path back to the drop-off zone
-5. Spawn new crates
-
-# TODO
-
-- implement algorithm for pathfinding 
-- simulate steps with simpy 
+Simulation of forklifts in a warehouse navigating around a grid structure of containers which they pick up. New containers are dropped off at the "pickup zone" to be stored in the grid and some crates (called "delivery crates") are marked to be taken to the "dropoff zone". Crates are to be prioritised in the order that the command is made. 
